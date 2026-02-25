@@ -46,7 +46,7 @@ def detectar_firmas_en_imagen(image_bgr: np.ndarray) -> int:
 # ==============================
 
 
-def analizar_pdf_bytes(pdf_bytes: bytes, dpi: int = 80):
+def analizar_pdf_bytes(pdf_bytes: bytes, dpi: int = 100):
     """
     Procesa el PDF página a página sin almacenar todas las imágenes.
     Optimizado para entornos de 512MB.
@@ -81,7 +81,7 @@ def analizar_pdf_bytes(pdf_bytes: bytes, dpi: int = 80):
         if num_firmas > 0:
             firma_ok = True
 
-        # 🔥 LIBERAR MEMORIA
+        # LIBERAR MEMORIA
         del pix
         del img
         gc.collect()
