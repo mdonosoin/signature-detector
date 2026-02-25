@@ -1,6 +1,5 @@
 supervision
 huggingface_hub
-fitz
 pymupdf
 ultralytics
 numpy
