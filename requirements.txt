@@ -1,0 +1,13 @@
+supervision
+huggingface_hub
+fitz
+pymupdf
+ultralytics
+numpy
+fastapi
+uvicorn[standard]
+ultralytics
+opencv-python-headless
+numpy
+python-multipart
+torch
