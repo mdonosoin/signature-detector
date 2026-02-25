@@ -1,6 +1,8 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 from signature_detector import analizar_pdf_bytes
+import os
+import uvicorn
 
 app = FastAPI()
 
@@ -20,3 +22,8 @@ async def predict(file: UploadFile = File(...)):
         return resultado
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
